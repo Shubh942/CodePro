@@ -19,6 +19,8 @@
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^6.9.0",
     "nodemon": "^2.0.20",
+    "react-social-login-buttons": "^3.6.1",
+    "reactjs-social-login": "^2.6.2",
     "validator": "^13.7.0"
   }
 }

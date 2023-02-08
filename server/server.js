@@ -4,6 +4,7 @@ const path = require("path");
 
 dotenv.config();
 const app = require("./app");
+console.log(process.env);
 
 const DB = process.env.DATABASE_HOST.replace(
   '<password>',
