@@ -38,7 +38,7 @@ const Login = () => {
         };
         setLoading(true);
         const { data } = await axios.post(
-          "https://codenova-api.onrender.com/api/v1/users/login",
+          "http://localhost:5000/api/v1/users/login",
           { email: username, password: password },
           config
         );

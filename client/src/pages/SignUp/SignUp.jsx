@@ -35,7 +35,7 @@ const SignUp = () => {
         };
         setLoading(true);
         const { data } = await axios.post(
-          "https://codenova-api.onrender.com/api/v1/users/signup",
+          "http://localhost:5000/api/v1/users/signup",
           {
             name: name,
             email: email,

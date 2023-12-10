@@ -131,7 +131,7 @@ const Me = () => {
         },
       };
       const { data } = await axios.post(
-        `https://codenova-api.onrender.com/api/v1/users/make-friend`,
+        `http://localhost:5000/api/v1/users/make-friend`,
         { friendId: viewUser._id },
 
         config

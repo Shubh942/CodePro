@@ -19,7 +19,7 @@ const FriendCard = ({ item }) => {
         },
       };
       const { data } = await axios.post(
-        `https://codenova-api.onrender.com/api/v1/chat`,
+        `http://localhost:5000/api/v1/chat`,
         { userId: item._id },
         config
       );

@@ -42,7 +42,7 @@ const DiscussionCard = ({ item }) => {
       };
 
       const { data } = await axios.post(
-        `https://codenova-api.onrender.com/api/v1/chat/vote/${item._id}`,
+        `http://localhost:5000/api/v1/chat/vote/${item._id}`,
         { vote: "up" },
         config
       );
@@ -65,7 +65,7 @@ const DiscussionCard = ({ item }) => {
       };
 
       const { data } = await axios.post(
-        `https://codenova-api.onrender.com/api/v1/chat/vote/${item._id}`,
+        `http://localhost:5000/api/v1/chat/vote/${item._id}`,
         { vote: "down" },
         config
       );
@@ -88,7 +88,7 @@ const DiscussionCard = ({ item }) => {
       };
 
       const { data } = await axios.post(
-        "https://codenova-api.onrender.com/api/v1/admin/delete-discussion",
+        "http://localhost:5000/api/v1/admin/delete-discussion",
         { chatId: item._id },
         config
       );
@@ -110,7 +110,7 @@ const DiscussionCard = ({ item }) => {
         },
       };
       const { data } = await axios.get(
-        `https://codenova-api.onrender.com/api/v1/users/${user.data.user.name}`,
+        `http://localhost:5000/api/v1/users/${user.data.user.name}`,
 
         config
       );
@@ -135,7 +135,7 @@ const DiscussionCard = ({ item }) => {
       };
 
       const { data } = await axios.post(
-        "https://codenova-api.onrender.com/api/v1/users/add-bookmark",
+        "http://localhost:5000/api/v1/users/add-bookmark",
         { chatId: item._id },
         config
       );
