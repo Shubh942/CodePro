@@ -39,36 +39,42 @@ const createSendToken = (user, statusCode, res) => {
 };
 
 exports.signup = catchAsync(async (req, res, next) => {
-  const newUser = await User.create({
-    name: req.body.name,
-    email: req.body.email,
-    photo: req.body.photo,
-    password: req.body.password,
-    confirmPassword: req.body.confirmPassword,
-  });
+  console.log(req.body);
+  const newUser = await User.create(
+    // name: req.body.name,
+    // email: req.body.email,
+    // photo: req.body.photo,
+    // password: req.body.password,
+    // confirmPassword: req.body.confirmPassword,
+    req.body
+  );
 
-  const url = `${req.protocol}://${req.get("host")}/me`;
+  // const url = `${req.protocol}://${req.get("host")}/me`;
 
-  createSendToken(newUser, 201, res);
+  // createSendToken(newUser, 201, res);
 
-  let transporter = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-      user: "impostercrewfreedom@gmail.com",
-      pass: "avuwpktrouxkalqw",
-    },
-  });
-  let mailoptions = {
-    from: "impostercrewfreedom@gmail.com",
-    to: req.body.email,
-    subject: "click on this link to verify your",
-  };
-  transporter.sendMail(mailoptions, (err, result) => {
-    if (err) {
-      // console.log(err);
-    } else {
-      // console.log("Email send: " + result.response);
-    }
+  // let transporter = nodemailer.createTransport({
+  //   service: "gmail",
+  //   auth: {
+  //     user: "impostercrewfreedom@gmail.com",
+  //     pass: "avuwpktrouxkalqw",
+  //   },
+  // });
+  // let mailoptions = {
+  //   from: "impostercrewfreedom@gmail.com",
+  //   to: req.body.email,
+  //   subject: "click on this link to verify your",
+  // };
+  // transporter.sendMail(mailoptions, (err, result) => {
+  //   if (err) {
+  //     // console.log(err);
+  //   } else {
+  //     // console.log("Email send: " + result.response);
+  //   }
+  // });
+  res.json({
+    status: "sucess",
+    data: newUser,
   });
 });
 
